@@ -22,7 +22,7 @@ group :production do
 end
 
 group :development, :test do
-  gem 'byebug', platform: :mri
+  gem 'pry'
 end
 
 group :development do
