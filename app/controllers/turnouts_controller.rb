@@ -1,7 +1,7 @@
-class UserAttendencesController < ApplicationController
+class TurnoutsController < ApplicationController
 
   def index
-    @a = UserAttendance.all
+    @turnouts = Turnout.all
   end
 
   def show

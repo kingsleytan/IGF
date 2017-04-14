@@ -1,0 +1,8 @@
+<h1>User Attendances</h1>
+<% @turnouts.each do |t| %>
+<div class="userattendance">
+  <h3>Username: <%= User.find_by(id: t.user_id).username %></h3>
+  <h5>Location: <%= t.location %></h5>
+  <h5>Date: <%= t.created_at %></h5>
+</div>
+<% end %>

@@ -1,3 +1,4 @@
 class User < ApplicationRecord
-  has_many :user_attendances
+  has_many :turnouts
+  enum role: [:user, :moderator, :admin]
 end
