@@ -46,6 +46,10 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.3)
+    carrierwave (1.0.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
@@ -58,6 +62,8 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    figaro (1.1.1)
+      thor (~> 0.14)
     font-awesome-rails (4.7.0.1)
       railties (>= 3.2, < 5.1)
     globalid (0.3.7)
@@ -81,6 +87,7 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
+    mini_magick (4.7.0)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
@@ -172,11 +179,14 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
+  carrierwave
   coffee-rails (~> 4.2)
+  figaro
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  mini_magick
   pg (~> 0.18)
   pry
   puma (~> 3.0)
