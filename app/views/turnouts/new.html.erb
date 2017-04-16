@@ -1,0 +1,16 @@
+<%= form_for(@turnout, url: turnouts_path, html: { id: "turnout-create-form" }) do |f| %>
+<h1 class="text-center"> Create Attendance </h1>
+<div class="form-group">
+  <h4> <%= f.label :title_field, "User ID" %> </h4>
+  <%= f.text_field :user_id, required: true, id: "user_id_field", class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <h4> <%= f.label :text_field, "Location" %> </h4>
+  <%= f.text_field :location, id: "location_field", class: 'form-control' %>
+</div>
+
+<div class="form-group text-center">
+  <%= f.submit "Create Attendance", class: "btn btn-success btn-lg" %>
+</div>
+<% end %>
