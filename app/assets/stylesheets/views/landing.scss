@@ -1,9 +1,6 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 .background {
   background-image: asset-url("success.jpg");
-  height: calc(100vh - 52px);
+  height: calc(40vh - 52px);
   width: 100%;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -12,6 +9,12 @@
   align-items: center;
   justify-content: center;
 }
+
+.line {
+    width: 200px;
+    border-width: 3px;
+    border-top: 2px solid silver;
+  }
 
 .features {
   display: flex;
@@ -24,10 +27,10 @@
 .feature {
   flex: 0 0 280px;
   margin: 20px 10px;
-  &:hover .invisible-layout {
-      opacity: 1;
-      transition: all 0.5s ease-in-out;
-    }
+  // &:hover .invisible-layout {
+  //     opacity: 1;
+  //     transition: all 0.5s ease-in-out;
+  //   }
 }
 
 .invisible-layout{
@@ -52,9 +55,9 @@
     margin: 60px auto;
   }
 
-div#banner {
-  position:absolute;
-  top:38%;
-  width:100%;
-  background-color: rgba(179, 179, 179, 0.8);
-}
+
+@media all and (max-width: 1199px) {
+    .features {
+      max-width: 600px;
+    }
+  }
