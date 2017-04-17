@@ -3,7 +3,7 @@
 
 .background {
   background-image: asset-url("success.jpg");
-  height: 100vh;
+  height: calc(100vh - 52px);
   width: 100%;
   background-position: 50% 50%;
   background-repeat: no-repeat;

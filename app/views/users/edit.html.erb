@@ -1,0 +1,53 @@
+<div class="users edit">
+  <div class="content">
+
+    <%= form_for(current_user, url: user_path(current_user), method: :patch, html: { id: 'user-edit-form' }) do |f| %>
+      <h1 class="white shadowed text-center">
+        Edit User Details
+      </h1>
+
+      <hr>
+
+      <div class="form-group">
+        <h4 class="white shadowed text-center"> Profile Image </h4>
+        <div id="preview-image">
+          <% image = current_user.image.url || "graybox.jpg" %>
+          <%= image_tag image, class: "img-settings img-responsive center-block" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.file_field :image, id: "user_image_field", class: 'form-control image-uploader' %>
+      </div>
+
+      <div class="form-group">
+        <h4> <%= f.label :email_field, "Email", class: "white shadowed" %> </h4>
+        <%= f.email_field :email, required: true, id: "user_email_field", class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <h4> <%= f.label :username_field, "Username", class: "white shadowed" %> </h4>
+        <%= f.text_field :username, required: true, id: 'user_username_field', class: 'form-control' %>
+      </div>
+
+      <div class="form-group text-center">
+        <%= f.submit "Update details!", class: "btn btn-primary btn-lg" %>
+      </div>
+    <% end %>
+
+    <%= form_for(current_user, url: user_path(current_user), method: :patch, html: { id: 'user-edit-password-form' }) do |f| %>
+      <h1 class="white shadowed text-center">
+        Edit User Password
+      </h1>
+
+      <div class="form-group">
+        <h4> <%= f.label :password_field, "Password", class: "white shadowed" %> </h4>
+        <%= f.password_field :password, required: true, id: 'user_password_field', class: 'form-control' %>
+      </div>
+
+      <div class="form-group text-center">
+        <%= f.submit "Update password!", class: "btn btn-primary btn-lg" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -16,9 +16,10 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
-gem 'carrierwave'
 gem 'mini_magick'
 gem 'figaro'
+gem 'carrierwave-aws'
+gem 'bcrypt'
 
 group :production do
   gem 'rails_12factor'

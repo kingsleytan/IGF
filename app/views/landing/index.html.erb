@@ -5,7 +5,8 @@
         <div class="feature text-center">
           <div class="invisible-layout content-hover">
             <div class="content-hover-alignment">
-              <h3><%= fa_icon 'sign-in 4x' %> <h5> Sign attendance </h5></h3>
+              <h3><%= link_to "Register", new_user_path, class: 'fa_icon sign-in 4x' %></h3>
+              <%= link_to "Login", new_session_path, class: 'white shadowed link-styling' %>
             </div>
             </div>
         </div>

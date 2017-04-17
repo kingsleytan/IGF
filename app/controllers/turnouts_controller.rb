@@ -1,5 +1,5 @@
 class TurnoutsController < ApplicationController
-
+before_action :authenticate!, except: [:index]
   def index
     @turnouts = Turnout.all
   end
@@ -12,11 +12,13 @@ class TurnoutsController < ApplicationController
   end
 
   def create
-    @turnout = Turnout.new(turnout_params)
+    @turnout = current_user.turnouts.build(turnout_params)
 
     if @turnout.save
+      flash[:success] = "You've signed attendance"
       redirect_to turnouts_path
     else
+      flash[:danger] = @turnout.errors.full_messages
       redirect_to new_turnout_path
     end
   end
