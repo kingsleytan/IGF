@@ -7,13 +7,17 @@
       </h1>
 
       <div class="form-group">
+        <h4> <%= f.label :username_field, "Username", class: "white shadowed" %> </h4>
+        <%= f.text_field :username, required: true, id: 'user_username_field', class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
         <h4> <%= f.label :email_field, "Email", class: "white shadowed" %> </h4>
         <%= f.email_field :email, required: true, id: "user_email_field", class: 'form-control' %>
       </div>
 
       <div class="form-group">
-        <h4> <%= f.label :username_field, "Username", class: "white shadowed" %> </h4>
-        <%= f.text_field :username, required: true, id: 'user_username_field', class: 'form-control' %>
+        <h4> Upline: <%= f.text_field :upline, :value => current_user.username %> </h4>
       </div>
 
       <div class="form-group">

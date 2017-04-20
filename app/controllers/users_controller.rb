@@ -20,7 +20,6 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    authorize @user
   end
 
   def update
@@ -38,6 +37,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :username, :image, :password).delete_if { |k,v| v.nil? }
+    params.require(:user).permit(:email, :username, :image, :password, :upline).delete_if { |k,v| v.nil? }
   end
 end
