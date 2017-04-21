@@ -14,7 +14,6 @@ else
       aws_secret_access_key: ENV.fetch("AWS_SECRET_ACCESS_KEY"),
       region: 'ap-southeast-1',
     }
-    config.storage = :fog
     config.fog_directory = ENV.fetch("AWS_BUCKET")
     config.fog_public = false
   end
