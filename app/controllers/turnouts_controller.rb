@@ -1,5 +1,6 @@
 class TurnoutsController < ApplicationController
 before_action :authenticate!, except: [:index]
+
   def index
     @turnouts = Turnout.all
   end
@@ -25,10 +26,12 @@ before_action :authenticate!, except: [:index]
 
   def edit
     @turnout = Turnout.find_by(id: params[:id])
+    authorize @turnout
   end
 
   def update
     @turnout = Turnout.find(params[:id])
+    authorize @turnout
     if @turnout.update(turnout_params)
       redirect_to turnouts_path
     else
@@ -38,6 +41,7 @@ before_action :authenticate!, except: [:index]
 
   def destroy
     @turnout = Turnout.find(params[:id])
+    authorize @turnout
     if @turnout.destroy
       redirect_to turnouts_path
     else

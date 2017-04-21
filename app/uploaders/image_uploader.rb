@@ -1,12 +1,14 @@
 # encoding: utf-8
+
 class ImageUploader < CarrierWave::Uploader::Base
+
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
-  storage :aws
+  # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -28,13 +30,15 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   # process :scale => [200, 300]
+  # for testing image size validation
+  unless Rails.env.test?
+    process resize_to_fit: [600, 600]
+  end
   #
   # def scale(width, height)
   #   # do something
   # end
-  unless Rails.env.test?
-    process resize_to_fit: [600, 600]
-  end
+
   # Create different versions of your uploaded files:
   version :thumb do
     process resize_to_fill: [50, 50]
@@ -48,6 +52,9 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
+  # def filename
+  #   "something.jpg" if original_filename
+  # end
   def filename
     "#{secure_token}-" + original_filename if original_filename
   end

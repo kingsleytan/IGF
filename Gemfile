@@ -18,8 +18,9 @@ gem 'bootstrap-sass'
 gem "font-awesome-rails"
 gem 'mini_magick'
 gem 'figaro'
-gem 'carrierwave-aws'
 gem 'bcrypt'
+gem 'pundit'
+gem 'carrierwave'
 
 group :production do
   gem 'rails_12factor'
