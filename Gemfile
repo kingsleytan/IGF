@@ -21,6 +21,7 @@ gem 'figaro'
 gem 'bcrypt'
 gem 'pundit'
 gem 'carrierwave'
+gem "fog-aws"
 
 group :production do
   gem 'rails_12factor'
