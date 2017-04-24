@@ -1,17 +1,18 @@
 <%= form_for(@pin, url: pins_path, html: { id: "pin-create-form" }) do |f| %>
 <h1 class="text-center"> Create Pins </h1>
 <div class="form-group">
-  <h4> Name: <%= f.label :title_field, current_user.username %> </h4>
+  <h4> From name: <%= f.label :title_field, current_user.username %> </h4>
 </div>
 
 <div class="form-group">
-  <h4> Date: <%= f.label :title_field, Time.now.strftime("%m/%d/%Y, %a, %I:%M%p") %> </h4>
+  <h4> Pins Balance: <%= f.label :title_field, current_user.total_pins %> </h4>
 </div>
 
 <div class="form-group">
-  <h4> <%= f.label :number_field, "Amount to be created" %> </h4>
+  <h4> <%= f.label :number_field, "Transfer Amount:" %> </h4>
   <%= f.text_field :amount, required: true, id: "amount_field", class: 'form-control' %>
 </div>
+
 
 <div class="form-group text-center">
   <%= f.submit "Create Pins", class: "btn btn-success btn-lg" %>

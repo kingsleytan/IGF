@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   # respond_to :js
   before_action :authenticate!, only: [:edit, :update]
 
+  def index
+    @user = User.find_by(id: params[:transfer_user_id])
+  end
+
   def new
     @user = User.new
   end

@@ -1,9 +1,6 @@
 class SessionsController < ApplicationController
 respond_to :js
   def new
-    respond_to do |format|
-    format.js
-  end
   end
 
   def create

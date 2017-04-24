@@ -8,4 +8,9 @@ class User < ApplicationRecord
 
   validates :username, presence: true,
                        uniqueness: true
+
+  def total_pins
+    pins.pluck(:amount).sum
+  end
+
 end

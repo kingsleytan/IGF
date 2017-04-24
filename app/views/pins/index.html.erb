@@ -19,6 +19,12 @@
     <td>
       <%= link_to "Delete", pin_path(t), method: :delete, class: "btn btn-danger", data: { confirm: "Delete?"} %>
     </td>
+    <td>
+      <%= link_to "Add Pin", addpin_path({user_id: t.user_id}), method: :post, class: "btn btn-success" %>
+    </td>
+    <td>
+      <%= link_to "Deduct Pin", deductpin_path({user_id: t.user_id}), method: :post, class: "btn btn-success" %>
+    </td>
   </tr>
   <% end %>
 </table>
