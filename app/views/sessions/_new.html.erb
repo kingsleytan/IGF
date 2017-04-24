@@ -1,7 +1,7 @@
 <div class="sessions new">
   <div class="content">
 
-    <%= form_for(:user, url: sessions_path, method: :post, html: { id: "user-sign-in-form" }) do |f| %>
+    <%= form_for(:user, url: sessions_path, method: :post, remote: true, html: { id: "user-sign-in-form" }) do |f| %>
       <h1 class="white shadowed text-center">
         Sign In
       </h1>

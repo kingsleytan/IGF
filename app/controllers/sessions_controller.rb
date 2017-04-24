@@ -1,12 +1,14 @@
 class SessionsController < ApplicationController
-
+respond_to :js
   def new
+    respond_to do |format|
+    format.js
+  end
   end
 
   def create
     user = User.find_by(username: user_params[:username])
                &.authenticate(user_params[:password])
-
     if user
       cookies.permanent.signed[:id] = user.id
       flash[:success] = "Welcome back #{current_user.username}"

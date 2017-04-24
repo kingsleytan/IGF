@@ -1,0 +1,24 @@
+<h1>View All: Pins Balances</h1>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Upline</th>
+    <th>Pins</th>
+    <th>Date</th>
+  </tr>
+  <% @pins.each do |t| %>
+  <tr>
+    <td><%= User.find_by(id: t.user_id).username %></td>
+    <td><%= User.find_by(id: t.user_id).upline %></td>
+    <td><%= t.amount %></td>
+    <td><%= t.created_at.strftime("%m/%d/%Y, %a, %I:%M%p") %></td>
+    <td>
+      <%= link_to "Edit", edit_pin_path(t), class: "btn btn-success" %>
+    </td>
+    <td>
+      <%= link_to "Delete", pin_path(t), method: :delete, class: "btn btn-danger", data: { confirm: "Delete?"} %>
+    </td>
+  </tr>
+  <% end %>
+</table>

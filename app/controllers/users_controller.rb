@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  # respond_to :js
   before_action :authenticate!, only: [:edit, :update]
 
   def new
