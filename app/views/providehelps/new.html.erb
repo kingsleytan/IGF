@@ -1,11 +1,11 @@
-<%= form_for(@cash, url: cashes_path, html: { id: "cash-create-form" }) do |f| %>
-<h1 class="text-center"> Create cash </h1>
+<%= form_for(@pin, url: pins_path, html: { id: "pin-create-form" }) do |f| %>
+<h1 class="text-center"> Create Pins </h1>
 <div class="form-group">
   <h4> From name: <%= f.label :title_field, current_user.username %> </h4>
 </div>
 
 <div class="form-group">
-  <h4> Cash Balance: <%= f.label :title_field, current_user.total_cashes %> </h4>
+  <h4> Pins Balance: <%= f.label :title_field, current_user.total_pins %> </h4>
 </div>
 
 <div class="form-group">
@@ -15,6 +15,6 @@
 
 
 <div class="form-group text-center">
-  <%= f.submit "Create Cash", class: "btn btn-success btn-lg" %>
+  <%= f.submit "Create Pins", class: "btn btn-success btn-lg" %>
 </div>
 <% end %>

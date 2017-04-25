@@ -1,5 +1,5 @@
-<%= form_for(@cash, url: cash_path(@cash), html: { id: "cash-update-form" }) do |f| %>
-<h1 class="text-center"> Activation cash Transfer </h1>
+<%= form_for(@pin, url: pin_path(@pin), html: { id: "pin-update-form" }) do |f| %>
+<h1 class="text-center"> Activation Pin Transfer </h1>
 
 
 <div class="form-group">
@@ -11,11 +11,11 @@
   <%= f.text_field :transfer_user_id, required: true, id: "transfer_user_id_field", class: 'form-control' %>
 </div>
 <div class="form-group">
-  <h4> <%= f.label :text_field, "Activation cash" %> </h4>
+  <h4> <%= f.label :text_field, "Activation Pin" %> </h4>
   <%= f.text_field :transfer_user_id, required: true, id: "transfer_user_id_field", class: 'form-control' %>
 </div>
 
 <div class="form-group text-center">
-  <%= f.submit "Transfer cash", class: "btn btn-success btn-lg" %>
+  <%= f.submit "Transfer Pin", class: "btn btn-success btn-lg" %>
 </div>
 <% end %>
