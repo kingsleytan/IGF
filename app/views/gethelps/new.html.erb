@@ -1,20 +1,23 @@
 <%= form_for(@gethelp, url: gethelps_path, html: { id: "gethelp-create-form" }) do |f| %>
-<h1 class="text-center"> Create Get Help </h1>
+<h1 class="text-center"> Create Provide Help </h1>
 <div class="form-group">
   <h4> From name: <%= f.label :title_field, current_user.username %> </h4>
 </div>
 
 <div class="form-group">
-  <h4> Get Help Balance: <%= f.label :title_field, current_user.total_gethelps %> </h4>
+  <h4> Pins Balance: <%= f.label :title_field, current_user.total_pins %> </h4>
 </div>
 
+<hr>
+
+
 <div class="form-group">
-  <h4> <%= f.label :number_field, "Transfer Amount:" %> </h4>
+  <h4> <%= f.label :number_field, "Get Help Amount:" %> </h4>
   <%= f.text_field :amount, required: true, id: "amount_field", class: 'form-control' %>
 </div>
 
 
 <div class="form-group text-center">
-  <%= f.submit "Create Get Help", class: "btn btn-success btn-lg" %>
+  <%= f.submit "Confirm", class: "btn btn-success btn-lg" %>
 </div>
 <% end %>
