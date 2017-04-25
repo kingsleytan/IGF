@@ -1,6 +1,6 @@
 class PinsController < ApplicationController
 # before_action :authenticate!, except: [:index]
-before_action :find_or_create_pins
+# before_action :find_or_create_pins
   def index
     @pins = Pin.all
   end
@@ -39,12 +39,12 @@ before_action :find_or_create_pins
   end
 
   def addpin
-    @user = User.find_by(id: params[:id])
+    @user = User.find_by(id: params[:user_id])
     @pin = @user.pins.create(amount: 1)
   end
 
   def deductpin
-    @user = User.find_by(id: params[:id])
+    @user = User.find_by(id: params[:user_id])
     @pin = @user.pins.create(amount: -1)
   end
 
@@ -55,9 +55,9 @@ before_action :find_or_create_pins
     @pin = user.pins.create(amount: amount)
   end
 
-    def find_or_create_pins
-      @pin = current_user.pins.find_or_create_by(amount: 0)
-    end
+    # def find_or_create_pins
+    #   @pin = current_user.pins.find_or_create_by(amount: 0)
+    # end
 
   def pin_params
     params.require(:pin).permit(:user_id, :amount, :transfer_user_id, :transfer_amount)

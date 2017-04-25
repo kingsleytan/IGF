@@ -10,17 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170424053341) do
+ActiveRecord::Schema.define(version: 20170425014607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "pins", force: :cascade do |t|
-    t.integer  "amount"
+  create_table "cashes", force: :cascade do |t|
+    t.integer  "amount",           default: 0
     t.integer  "user_id"
     t.integer  "transfer_user_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "transfer_amount"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  create_table "pins", force: :cascade do |t|
+    t.integer  "amount",           default: 0
+    t.integer  "user_id"
+    t.integer  "transfer_user_id"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.integer  "transfer_amount"
   end
 

@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :turnouts
   has_many :pins
+  has_many :cashes
 
   enum role: [:user, :moderator, :admin]
   mount_uploader :image, ImageUploader
