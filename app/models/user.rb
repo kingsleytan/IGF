@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :turnouts
   has_many :pins
   has_many :cashes
+  has_many :providehelps
+  has_many :gethelps
 
   enum role: [:user, :moderator, :admin]
   mount_uploader :image, ImageUploader
@@ -12,6 +14,10 @@ class User < ApplicationRecord
 
   def total_pins
     pins.pluck(:amount).sum
+  end
+
+  def total_cashes
+    cashes.pluck(:amount).sum
   end
 
 end

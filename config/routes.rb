@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :password_resets, only: [:new, :create, :edit, :update]
 
+  resources :providehelps
+  resources :gethelps
+
   resources :pins
   get :newpintransfer, to: 'pins#newpintransfer'
   post :transferpin, to: 'pins#transferpin'
