@@ -1,11 +1,17 @@
-<%= form_for(@pin, url: pins_path, html: { id: "pin-create-form" }) do |f| %>
-<h1 class="text-center"> Create Pins </h1>
+<%= form_for(@providehelp, url: providehelps_path, html: { id: "providehelp-create-form" }) do |f| %>
+<h1 class="text-center"> Create Provide Help </h1>
 <div class="form-group">
   <h4> From name: <%= f.label :title_field, current_user.username %> </h4>
 </div>
 
 <div class="form-group">
   <h4> Pins Balance: <%= f.label :title_field, current_user.total_pins %> </h4>
+</div>
+
+<hr>
+
+<div class="form-group">
+  <h4> Pin Required: <%= f.label :title_field, 1 %> </h4>
 </div>
 
 <div class="form-group">
@@ -15,6 +21,6 @@
 
 
 <div class="form-group text-center">
-  <%= f.submit "Create Pins", class: "btn btn-success btn-lg" %>
+  <%= f.submit "Confirm", class: "btn btn-success btn-lg" %>
 </div>
 <% end %>
