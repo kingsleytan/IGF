@@ -1,11 +1,11 @@
-<%= form_for(@providehelp, url: transferprovidehelp_path, html: { id: "providehelp-create-form" }) do |f| %>
-<h1 class="text-center"> Create Providehelp </h1>
+<%= form_for(@gethelp, url: transfergethelp_path, html: { id: "gethelp-create-form" }) do |f| %>
+<h1 class="text-center"> Create gethelp </h1>
 <div class="form-group">
   <h4> From name: <%= f.label :title_field, current_user.username %> </h4>
 </div>
 
 <div class="form-group">
-  <h4> providehelps Balance: <%= f.label :title_field, current_user.total_providehelps %> </h4>
+  <h4> gethelps Balance: <%= f.label :title_field, current_user.total_gethelps %> </h4>
 </div>
 
 <div class="form-group">
@@ -24,6 +24,6 @@
 
 
 <div class="form-group text-center">
-  <%= f.submit "Transfer Providehelps", class: "btn btn-success btn-lg" %>
+  <%= f.submit "Transfer gethelps", class: "btn btn-success btn-lg" %>
 </div>
 <% end %>
