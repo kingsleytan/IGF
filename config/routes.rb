@@ -4,15 +4,21 @@ Rails.application.routes.draw do
 
   root to: 'landing#index'
   resources :turnouts
-  resources :pins
 
   resources :users
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :sessions, only: [:new, :create, :destroy]
   resources :password_resets, only: [:new, :create, :edit, :update]
 
+  resources :pins
   get :newpintransfer, to: 'pins#newpintransfer'
   post :transferpin, to: 'pins#transferpin'
   post :addpin, to: 'pins#addpin'
   post :deductpin, to: 'pins#deductpin'
+
+  resources :cashes
+  get :newcashtransfer, to: 'cashes#newcashtransfer'
+  post :transfercash, to: 'pins#transfercash'
+  post :addcash, to: 'pins#addcash'
+  post :deductcash, to: 'pins#deductcash'
 end
