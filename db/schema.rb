@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425014607) do
+ActiveRecord::Schema.define(version: 20170425065733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20170425014607) do
     t.datetime "updated_at",                   null: false
   end
 
+  create_table "gethelps", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "pair_user_id"
+    t.integer  "amount",       default: 0
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "pins", force: :cascade do |t|
     t.integer  "amount",           default: 0
     t.integer  "user_id"
@@ -31,6 +39,14 @@ ActiveRecord::Schema.define(version: 20170425014607) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.integer  "transfer_amount"
+  end
+
+  create_table "providehelps", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "pair_user_id"
+    t.integer  "amount",       default: 0
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "turnouts", force: :cascade do |t|

@@ -1,0 +1,2 @@
+class Providehelp < ApplicationRecord
+end
