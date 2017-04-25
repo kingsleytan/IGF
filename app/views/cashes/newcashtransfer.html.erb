@@ -1,0 +1,29 @@
+<%= form_for(@pin, url: transferpin_path, html: { id: "pin-create-form" }) do |f| %>
+<h1 class="text-center"> Create Pins </h1>
+<div class="form-group">
+  <h4> From name: <%= f.label :title_field, current_user.username %> </h4>
+</div>
+
+<div class="form-group">
+  <h4> Pins Balance: <%= f.label :title_field, current_user.total_pins %> </h4>
+</div>
+
+<div class="form-group">
+  <h4> <%= f.label :number_field, "Transfer Amount:" %> </h4>
+  <%= f.number_field :transfer_amount, required: true, id: "amount_field", class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <h4> <%= f.label :number_field, "Transfer User_id:" %> </h4>
+  <%= f.number_field :transfer_user_id, required: true, id: "amount_field", class: 'form-control' %>
+</div>
+<!-- <%= link_to "Search User", users_path({id: :transfer_user_id}), method: :get, remote: true, class: "btn btn-success" %>
+<div id="searchuser"> -->
+
+</div>
+
+
+<div class="form-group text-center">
+  <%= f.submit "Transfer Pins", class: "btn btn-success btn-lg" %>
+</div>
+<% end %>

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   resources :cashes
   get :newcashtransfer, to: 'cashes#newcashtransfer'
-  post :transfercash, to: 'pins#transfercash'
-  post :addcash, to: 'pins#addcash'
-  post :deductcash, to: 'pins#deductcash'
+  post :transfercash, to: 'cashes#transfercash'
+  post :addcash, to: 'cashes#addcash'
+  post :deductcash, to: 'cashes#deductcash'
 end
