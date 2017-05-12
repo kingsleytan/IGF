@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
 
   resources :providehelps
+  get :newpairing, to: 'providehelps#newpairing'
+  post :pairing, to: 'providehelps#pairing'
+
   resources :gethelps
 
   resources :pins

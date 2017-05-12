@@ -1,0 +1,26 @@
+<%= form_for(@providehelp, url: providehelps_path, html: { id: "providehelp-create-form" }) do |f| %>
+<h1 class="text-center"> Create Provide Help Pairing </h1>
+<div class="form-group">
+  <h4> From name: <%= f.label :title_field, @user %> </h4>
+</div>
+
+<hr>
+
+<div class="form-group">
+  <h4> Amount: <%= f.label :title_field, 0 %> </h4>
+</div>
+
+<div class="form-group">
+  <h4> Pair Amount: <%= f.label :number_field, 0 %> </h4>
+</div>
+
+<div class="form-group">
+  <h4> Pair User: <%= f.label :text_field, 0 %> </h4>
+</div>
+
+
+
+<div class="form-group text-center">
+  <%= f.submit "Confirm Pair", class: "btn btn-success btn-lg" %>
+</div>
+<% end %>

@@ -4,7 +4,9 @@
   <tr>
     <th>Username</th>
     <th>Upline</th>
-    <th>Provide Help</th>
+    <th>PH Amount</th>
+    <th>Pair Amount</th>
+    <th>Pair Username</th>
     <th>Date</th>
   </tr>
   <% @providehelps.each do |t| %>
@@ -12,6 +14,14 @@
     <td><%= User.find_by(id: t.user_id).username %></td>
     <td><%= User.find_by(id: t.user_id).upline %></td>
     <td><%= t.amount %></td>
+    <td><%= t.transfer_amount %></td>
+
+    <% if t.transfer_user_id.nil? || t.transfer_user_id == 0%>
+        <td> </td>
+    <% else %>
+        <td><%= User.find_by(id: t.transfer_user_id).username %></td>
+    <% end %>
+
     <td><%= t.created_at.strftime("%m/%d/%Y, %a, %I:%M%p") %></td>
     <td>
       <%= link_to "Edit", edit_providehelp_path(t), class: "btn btn-success" %>
@@ -19,6 +29,12 @@
     <td>
       <%= link_to "Delete", providehelp_path(t), method: :delete, class: "btn btn-danger", data: { confirm: "Delete?"} %>
     </td>
+    <td>
+      <%= link_to "Pair", newpairing_path(t), remote: true, locals: {providehelps: t}, class: "btn btn-success" %>
+    </td>
+    <div id="pair-form">
+    <!-- respond to js, render providehelps/newpairing -->
+    </div>
   </tr>
   <% end %>
 </table>

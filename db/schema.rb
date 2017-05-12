@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170425072658) do
+ActiveRecord::Schema.define(version: 20170512044230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,10 +43,20 @@ ActiveRecord::Schema.define(version: 20170425072658) do
 
   create_table "providehelps", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "pair_user_id"
-    t.integer  "amount",       default: 1000
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "amount",           default: 1000
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.integer  "transfer_amount"
+    t.integer  "transfer_user_id", default: 0
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer  "pin_req",    default: 0
+    t.integer  "cash_req",   default: 0
+    t.integer  "user_id"
+    t.integer  "status",     default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "turnouts", force: :cascade do |t|

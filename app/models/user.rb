@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :cashes
   has_many :providehelps
   has_many :gethelps
+  has_many :requests
 
   enum role: [:user, :moderator, :admin]
   mount_uploader :image, ImageUploader
