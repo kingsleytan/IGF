@@ -2,38 +2,43 @@
   <nav class="navbar">
     <div class="container-fluid">
       <div class="navbar-header">
-        <%= link_to "Home", root_path, class: 'navbar-brand' %>
+        <%= link_to image_tag("header-logo.png", alt: "logo", style: "max-height: 35px; margin-top: 10px"),'/' %>
       </div>
 
       <div class="collapse navbar-collapse" id="header-dropdown">
         <ul class="nav navbar-nav navbar-right">
 
-          <li>
-            <%= link_to "Sign Attendance", new_turnout_path, class: 'white shadowed link-styling' %>
-          </li>
+          <a href="#" class="btn btn-s-md btn-inverse" style="float: left; margin-top: 13px; min-width: 75px; margin-right: 15px" >
+            Cust.Service : 01136088080</a>
 
-          <% if current_user %>
+            <a href="#" class="btn btn-s-md btn-inverse" style="float: left; margin-top: 13px; min-width: 75px; margin-right: 15px" >
+              华文</a>
 
-            <li>
-              <%= link_to current_user.username, edit_user_path(current_user), class: 'white shadowed link-styling' %>
-            </li>
+              <!-- <li>
+                <%= link_to "Sign Attendance", new_turnout_path, class: 'white shadowed link-styling' %>
+              </li> -->
 
-            <li>
-              <%= link_to "Logout", session_path(current_user), method: :delete, class: 'white shadowed link-styling' %>
-            </li>
+              <% if current_user %>
+              <li class="nav-li">
+                <%= link_to current_user.username, edit_user_path(current_user) %>
+              </li>
 
-          <% else %>
+              <!-- <li>
+                <%= link_to "Logout", session_path(current_user), method: :delete, class: 'white shadowed link-styling' %>
+              </li> -->
 
-            <li>
-              <%= link_to "Register", new_user_path, class: 'white shadowed link-styling' %>
-            </li>
+              <% else %>
 
-            <li>
-              <%= link_to "Login", new_session_path, remote: true, class: 'white shadowed link-styling' %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+              <li>
+                <%= link_to "Register", new_user_path, class: 'white shadowed link-styling' %>
+              </li>
+
+              <li>
+                <%= link_to "Login", new_session_path, remote: true, class: 'white shadowed link-styling' %>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
-  </nav>
-</div>

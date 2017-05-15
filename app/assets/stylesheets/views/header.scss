@@ -1,8 +1,19 @@
 #header {
   height: 52px;
   z-index: 1;
-  background-color: #e1eaea;
 }
 .navbar {
   margin-bottom: 0;
+}
+.btn-inverse{
+  background-color: #4c5667 !important;
+    border: 1px solid #4c5667 !important;
+    color: #ffffff;
+}
+
+.nav-li {
+    color: #36404a !important;
+    line-height: 60px;
+    padding: 0px 15px;
+    position: relative;
 }

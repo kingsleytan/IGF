@@ -1,36 +1,53 @@
-<div class="background">
+<div class="content-page">
+  <div class="content">
+    <div class="container">
+      <div class="card-box">
+
+
+
+<!-- original content -->
+      <div class="background">
+
+      </div>
+      <div class="text-center">
+        <h1> Welcome to Leadership Program </h1>
+      </div>
+
+      <hr class="line">
+      <section class="features">
+
+        <div class="feature text-center">
+          <%= fa_icon "angle-right 5x", class: "sea-green" %>
+          <div class="text-box">
+            <h3><%= link_to "Register", new_user_path%></h3>
+          </div>
+        </div>
+
+        <div class="feature text-center">
+          <%= fa_icon "angle-double-right 5x", class: "sea-green" %>
+          <div class="text-box">
+            <h3><%= link_to "Login", new_session_path, remote: true %></h3>
+          </div>
+        </div>
+
+        <div class="feature text-center">
+          <%= fa_icon "angle-double-right 5x", class: "sea-green" %>
+          <div class="text-box">
+            <h3><%= link_to "Request Point/Pin", remote: true %></h3>
+          </div>
+        </div>
+
+        <div style="margin: 5px" class="new-login" id="login-form-container">
+          <!-- respond to js, render sessions/new -->
+        </div>
+
+      </section>
+
+      <!-- original content -->
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
-<div class="text-center">
-  <h1> Welcome to Leadership Program </h1>
-</div>
-
-<hr class="line">
-<section class="features">
-
-  <div class="feature text-center">
-    <%= fa_icon "angle-right 5x", class: "sea-green" %>
-    <div class="text-box">
-      <h3><%= link_to "Register", new_user_path%></h3>
-    </div>
-  </div>
-
-  <div class="feature text-center">
-    <%= fa_icon "angle-double-right 5x", class: "sea-green" %>
-    <div class="text-box">
-      <h3><%= link_to "Login", new_session_path, remote: true %></h3>
-    </div>
-  </div>
-
-  <div class="feature text-center">
-    <%= fa_icon "angle-double-right 5x", class: "sea-green" %>
-    <div class="text-box">
-      <h3><%= link_to "Request Point/Pin", remote: true %></h3>
-    </div>
-  </div>
-
-  <div style="margin: 5px" class="new-login" id="login-form-container">
-    <!-- respond to js, render sessions/new -->
-  </div>
-
-</section>
