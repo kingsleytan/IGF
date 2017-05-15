@@ -1,49 +1,137 @@
 <div class="content-page">
   <div class="content">
     <div class="container">
+
+      <div class="row">
+        <div class="col-sm-12">
+          <h4 class="page-title">Member's Home</h4>
+          <ol class="breadcrumb">
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li class="active">
+              Member's Home
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <section class="row">
+            <div class="col-sm-6 center" style="text-align:center; display:flex">
+              <a class="provide-help" href="/">
+              </a>
+
+            </div>
+            <div class="col-sm-6 center" style="text-align:center; display:flex">
+              <a class="get-help" href="/">
+              </a>
+            </div>
+
+          </section>
+
+        </div>
+      </div>
+
+
+      <br>
+      <br>
+
       <div class="card-box">
+        <h4 class="header-title">
+          <b>Provide Help History</b>
+          <span style="text-transform: lowercase;margin-left: 10px;">
+            (<a href="/" style="color:#FFA500;">View more</a>)
+          </span>
+        </h4>
+        <br>
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th width="85">Status</th>
+              <th width="85">Ref</th>
+              <th width="85">Sponsor</th>
+              <th scope="col">Amount</th>
+              <th width="450">To Object</th>
+              <th scope="col">Date</th>
+            </tr>
+          </thead>
+
+          <tbody><tr>
+            <td>Completed<br>
+              <center></center>
+            </td>
+            <td>
+              PH#52550d964588
+            </td>
+            <td class="center">YOU</td>
+
+            <td class="number">1,000.00<br></td>
+            <td>
+              Completed.
+            </td>
+            <td style="text-align:left;width:110px">05-04-2017</td>
+          </tr>
+          <tr>
+            <td>Completed<br>
+              <center></center>
+            </td>
+            <td>
+              PH#98fcc9214423
+            </td>
+            <td class="center">YOU</td>
+
+            <td class="number">1,000.00<br></td>
+            <td>
+              Completed.
+            </td>
+            <td style="text-align:left;width:110px">06-01-2017</td>
+          </tr>
+
+        </tbody></table>
 
 
+        <!-- original content -->
+        <div class="background">
 
-<!-- original content -->
-      <div class="background">
+        </div>
+        <div class="text-center">
+          <h1> Welcome to Leadership Program </h1>
+        </div>
 
-      </div>
-      <div class="text-center">
-        <h1> Welcome to Leadership Program </h1>
-      </div>
+        <hr class="line">
+        <section class="features">
 
-      <hr class="line">
-      <section class="features">
-
-        <div class="feature text-center">
-          <%= fa_icon "angle-right 5x", class: "sea-green" %>
-          <div class="text-box">
-            <h3><%= link_to "Register", new_user_path%></h3>
+          <div class="feature text-center">
+            <%= fa_icon "angle-right 5x", class: "sea-green" %>
+            <div class="text-box">
+              <h3><%= link_to "Register", new_user_path%></h3>
+            </div>
           </div>
-        </div>
 
-        <div class="feature text-center">
-          <%= fa_icon "angle-double-right 5x", class: "sea-green" %>
-          <div class="text-box">
-            <h3><%= link_to "Login", new_session_path, remote: true %></h3>
+          <div class="feature text-center">
+            <%= fa_icon "angle-double-right 5x", class: "sea-green" %>
+            <div class="text-box">
+              <h3><%= link_to "Login", new_session_path, remote: true %></h3>
+            </div>
           </div>
-        </div>
 
-        <div class="feature text-center">
-          <%= fa_icon "angle-double-right 5x", class: "sea-green" %>
-          <div class="text-box">
-            <h3><%= link_to "Request Point/Pin", remote: true %></h3>
+          <div class="feature text-center">
+            <%= fa_icon "angle-double-right 5x", class: "sea-green" %>
+            <div class="text-box">
+              <h3><%= link_to "Request Point/Pin", remote: true %></h3>
+            </div>
           </div>
-        </div>
 
-        <div style="margin: 5px" class="new-login" id="login-form-container">
-          <!-- respond to js, render sessions/new -->
-        </div>
+          <div style="margin: 5px" class="new-login" id="login-form-container">
+            <!-- respond to js, render sessions/new -->
+          </div>
 
-      </section>
+        </section>
 
-      <!-- original content -->
+        <!-- original content -->
       </div>
 
     </div>
