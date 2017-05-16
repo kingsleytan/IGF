@@ -9,7 +9,7 @@
     overflow-y: auto;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     position: absolute;
-    top: 52px;
+    top: 60px;
 }
 
 .side-menu {
@@ -71,8 +71,13 @@
 a {
     color: #337ab7;
     text-decoration: none;
+    background-color: transparent;
 }
 
-a {
-    background-color: transparent;
+.side-bar-font{
+  color: #ffffff;
+  display: block;
+  padding: 12px 20px;
+  margin: 4px 0px;
+  border-left: 3px solid transparent;
 }

@@ -6,14 +6,10 @@
 
 
         <li>
-          <a href="/" class="waves-effect subdrop">
-            <i class="fa fa-home"></i> <span> Home </span>
-          </a>
+          <%= link_to "Home", '/' , class: "fa fa-home" %>
         </li>
         <li>
-          <a href="profile.php" class="waves-effect ">
-            <i class="fa fa-user"></i> <span> Profile </span>
-          </a>
+        <%= link_to "Profile", edit_user_path(current_user), class: "fa fa-user" %>
         </li>
         <li>
           <a href="rebates.php" class="waves-effect ">

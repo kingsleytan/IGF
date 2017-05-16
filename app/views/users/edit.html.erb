@@ -1,64 +1,164 @@
-<div class="users edit">
+<div class="content-page">
+  <!-- Start content -->
   <div class="content">
+    <div class="container">
 
-    <%= form_for(current_user, url: user_path(current_user), method: :patch, html: { id: 'user-edit-form' }) do |f| %>
-      <h1 class="white shadowed text-center">
-        Edit User Details
-      </h1>
-
-      <hr>
-
-      <div class="form-group">
-        <h4> Pins Balance: <%= f.label :title_field, current_user.total_pins %> </h4>
-        <%= link_to "Transfer Pin", newpintransfer_path, method: :get, class: "btn btn-success" %>
+      <!-- Page-Title -->
+      <div class="row">
+        <div class="col-sm-12">
+          <h4 class="page-title">Profile</h4>
+          <ol class="breadcrumb">
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li class="active">
+              Profile
+            </li>
+          </ol>
+        </div>
       </div>
 
-      <div class="form-group">
-        <%= f.file_field :image, id: "user_image_field", class: 'form-control image-uploader' %>
+      <div class="row">
+        <div class="col-sm-12">
+
+          <ul class="nav nav-tabs navtab-bg">
+            <li class="active">
+              <a href="profile.php">
+                <span class="visible-xs"><i class="fa fa-home"></i></span>
+                <span class="hidden-xs">Profile</span>
+              </a>
+            </li>
+            <li>
+              <a href="profile.php?p=1">
+                <span class="visible-xs"><i class="fa fa-user"></i></span>
+                <span class="hidden-xs">Password</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="tab-content">
+
+
+            <form name="profile_info_form" method="post" action="profile.php" class="form-horizontal">
+              <input type="hidden" name="__req" value="1">
+              <h4 class="m-t-0 header-title"><b>Account profile</b></h4>
+              <br>
+
+              <div class="form-group">
+                <label for="_name" class="col-lg-3 control-label">Full Name: *</label>
+                <div class="col-lg-5">
+                  <input type="text" name="_name" value="Tan Seng King" class="form-control">
+                  <span class="help-block m-b-none"></span>
+                </div>
+              </div>
+
+
+
+              <div class="form-group">
+                <label for="_mobileno" class="col-lg-3 control-label">Contact Number: *</label>
+                <div class="col-lg-5">
+                  <input type="text" name="_mobileno" value="0199822119" class="form-control">
+                  <span class="help-block m-b-none"></span>
+                </div>
+              </div>
+
+
+
+              <div class="form-group">
+                <label for="_email" class="col-lg-3 control-label">Email: *</label>
+                <div class="col-lg-5">
+                  <input type="text" name="_email" value="Sengking.tan@gmail.com" class="form-control">
+                  <span class="help-block m-b-none"></span>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <label for="userid" class="col-lg-3 control-label">Country: *</label>
+                <div class="col-lg-5">
+                  Malaysia
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="_wechat_id" class="col-lg-3 control-label">Wechat ID:</label>
+                <div class="col-lg-5">
+                  <input type="text" name="_wechat_id" value="" class="form-control">
+                  <span class="help-block m-b-none"></span>
+                </div>
+              </div>
+
+
+              <br>
+              <h4 class="m-t-0 header-title"><b>Bank Account Information</b></h4>
+              <br>
+
+
+              <div class="form-group">
+                <label for="_bank_name" class="col-lg-3 control-label">Bank Name: *</label>
+                <div class="col-lg-5">
+                  <input type="text" name="_bank_name" value="Maybank" class="form-control" readonly="readonly">
+                  <span class="help-block m-b-none"></span>
+                </div>
+              </div>
+
+
+
+              <div class="form-group">
+                <label for="_bank_payee_name" class="col-lg-3 control-label">Payee Name: *</label>
+                <div class="col-lg-5">
+                  <input type="text" name="_bank_payee_name" value="Tan Seng King" class="form-control" readonly="readonly">
+                  <span class="help-block m-b-none"></span>
+                </div>
+              </div>
+
+
+
+              <div class="form-group">
+                <label for="_bank_acc_no" class="col-lg-3 control-label">Bank Acc/No.: *</label>
+                <div class="col-lg-5">
+                  <input type="text" name="_bank_acc_no" value="106053137765" class="form-control" readonly="readonly">
+                  <span class="help-block m-b-none"></span>
+                </div>
+              </div>
+
+
+
+              <div class="form-group">
+                <label for="_bank_address" class="col-lg-3 control-label">Bank City: *</label>
+                <div class="col-lg-5">
+                  <input type="text" name="_bank_address" value="Kuala Lumpur" class="form-control" readonly="readonly">
+                  <span class="help-block m-b-none"></span>
+                </div>
+              </div>
+
+
+              <br>
+              <h4 class="m-t-0 header-title"><b>Security</b></h4>
+              <br>
+              <div class="form-group">
+                <label for="userid" class="col-lg-3 control-label">Security Password: *</label>
+                <div class="col-lg-5">
+                  <input type="password" name="sec_password" value="" class="form-control">
+                </div>
+              </div>
+              <br>
+              <div class="form-group">
+                <div class="col-sm-4 col-sm-offset-3">
+                  <input type="submit" name="submit_btn" value="Update" class="btn btn-primary">
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+
+
+        </div>
       </div>
+    </div> <!-- container -->
 
-      <div class="form-group">
-        <h4> <%= f.label :email_field, "Email", class: "white shadowed" %> </h4>
-        <%= f.email_field :email, required: true, id: "user_email_field", class: 'form-control' %>
-      </div>
+  </div> <!-- content -->
 
-      <div class="form-group">
-        <h4> <%= f.label :username_field, "Username", class: "white shadowed" %> </h4>
-        <%= f.text_field :username, required: true, id: 'user_username_field', class: 'form-control' %>
-      </div>
 
-      <div class="form-group">
-        <h4> <%= f.label :upline_field, "Upline", class: "white shadowed" %> </h4>
-        <%= f.text_field :upline, required: true, id: 'user_upline_field', class: 'form-control' %>
-      </div>
-
-      <div class="form-group text-center">
-        <%= f.submit "Update details!", class: "btn btn-primary btn-lg" %>
-      </div>
-
-    <% end %>
-
-    <%= form_for(current_user, url: user_path(current_user), method: :patch, html: { id: 'user-edit-password-form' }) do |f| %>
-      <h1 class="white shadowed text-center">
-        Edit User Password
-      </h1>
-
-      <div class="form-group">
-        <h4> <%= f.label :password_field, "Password", class: "white shadowed" %> </h4>
-        <%= f.password_field :password, required: true, id: 'user_password_field', class: 'form-control' %>
-      </div>
-
-      <div class="form-group text-center">
-        <%= f.submit "Update password!", class: "btn btn-primary btn-lg" %>
-      </div>
-    <% end %>
-
-    <div class="form-group">
-      <h4 class="white shadowed text-center"> Profile Image </h4>
-      <div id="preview-image">
-        <% image = current_user.image.url || "success.jpg" %>
-        <%= image_tag image, class: "img-settings img-responsive center-block" %>
-      </div>
-    </div>
-  </div>
 </div>
